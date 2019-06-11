@@ -1,11 +1,17 @@
 <script>
-	export let name;
+  import MainText from "./MainText.svelte";
 </script>
 
 <style>
-	h1 {
-		color: purple;
-	}
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+  }
 </style>
 
-<h1>Hello {name}!</h1>
+<main>
+  <MainText />
+</main>
