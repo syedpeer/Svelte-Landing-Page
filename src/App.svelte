@@ -4,7 +4,8 @@
 
   const images = {
     "Landscape 1": { href: "./img/landscape1.jpg", textColor: "#333" },
-    "Landscape 2": { href: "./img/landscape2.jpg", textColor: "white" }
+    "Landscape 2": { href: "./img/landscape2.jpg", textColor: "white" },
+    "Landscape 3": { href: "./img/landscape3.jpg", textColor: "white" }
   };
 
   let currentImage = "Landscape 1";
