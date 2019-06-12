@@ -10,7 +10,8 @@
   $: minutes = rawMinutes >= 10 ? rawMinutes : "0" + rawMinutes;
   $: seconds = rawSeconds >= 10 ? rawSeconds : "0" + rawSeconds;
 
-  const getTimeOfDay = () => {
+  const getTimeOfDay = async () => {
+    await hour;
     if (hour > 7 && hour < 12) {
       timeOfDay = "morning";
     } else if (hour >= 12 && hour < 17) {
