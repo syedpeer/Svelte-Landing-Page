@@ -1,4 +1,5 @@
 <script>
+  export let color;
   let date = new Date();
   let timeOfDay;
 
@@ -34,7 +35,7 @@
   }
 </style>
 
-<div class="main-text">
+<div class="main-text" style="color: {color}">
   <h1 class="greeting">Good {timeOfDay}, Josse!</h1>
   <h1 class="timer">{`${hour}:${minutes}:${seconds}`}</h1>
 </div>
