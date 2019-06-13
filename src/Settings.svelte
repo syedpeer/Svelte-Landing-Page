@@ -5,6 +5,10 @@
   export let images;
   export let currentImage;
   const imageNames = Object.keys(images);
+
+  const close = () => {
+    dispatch("close");
+  };
 </script>
 
 <style>
@@ -29,6 +33,15 @@
 
   h1.header {
     border-bottom: 1px solid rgba(128, 128, 128, 0.644);
+  }
+
+  span.close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 2em;
+    font-weight: 700;
+    cursor: pointer;
   }
 
   h2.subheader {
@@ -82,6 +95,7 @@
 
 <div class="settings">
   <h1 class="header">Settings</h1>
+  <span class="close-icon" on:click={close}>x</span>
   <h2 class="subheader">Background</h2>
   <div class="image-tiles-container">
     {#each imageNames as image}
@@ -93,7 +107,5 @@
       </div>
     {/each}
   </div>
-  <button class="close-btn" on:click={() => dispatch('close')}>
-    Save and close
-  </button>
+  <button class="close-btn" on:click={close}>Save and close</button>
 </div>
