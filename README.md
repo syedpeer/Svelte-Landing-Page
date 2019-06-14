@@ -1,68 +1,9 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Svelte Landing Page
+This project contains a basic landing page built in Svelte, inspired by the [video by Traversy Media](https://www.youtube.com/watch?v=fSTQzlprGLI&t=1823s). It is primarily built for personal use and as a "method" to gain experience and fluency in [Svelte](https://svelte.dev).
 
----
+## Features
+### Front screen
+The landing page contains a front page containing a timer, a greeting that changes depending on the time of the day, and a search bar that will refer you to [Ecosia](https://ecosia.org).
 
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```
+### Tools page
+The second page might be one that will be more useful for other people when customized, as it contains a tile grid with (for me personally) useful links, with a smoothly looking background. These links are actually fully customizable when forking the repository by changing the object in the "Tools.svelte" file.
