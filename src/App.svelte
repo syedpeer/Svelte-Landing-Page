@@ -1,6 +1,7 @@
 <script>
   import MainText from "./MainText.svelte";
   import Settings from "./Settings.svelte";
+  import Tools from "./Tools.svelte";
 
   const images = {
     "Landscape 1": { href: "./img/landscape1.jpg", textColor: "#333" },
@@ -12,6 +13,10 @@
   $: currentImageUrl = images[currentImage].href;
   $: currentTextColor = images[currentImage].textColor;
 
+  const pages = ["main", "tools"];
+  let currentPageIndex = 1;
+  $: currentPage = pages[currentPageIndex];
+
   let settingsPage = false;
 
   const toggleSettingsView = () => {
@@ -21,16 +26,44 @@
   const updateImage = image => {
     currentImage = image.detail;
   };
+
+  const toRightPage = () => {
+    currentPageIndex++;
+  };
+
+  const toLeftPage = () => {
+    currentPageIndex--;
+  };
 </script>
 
 <style>
   main {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     height: 100vh;
     background-size: cover;
+  }
+
+  div.nav-arrow {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  div.nav-arrow-left {
+    margin-left: 1rem;
+  }
+
+  div.nav-arrow-right {
+    margin-right: 1rem;
+  }
+
+  i {
+    font-size: 5em;
+    font-stretch: ultra-expanded;
   }
 
   img {
@@ -42,8 +75,24 @@
   }
 </style>
 
+<svelte:head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</svelte:head>
+
 <main style="background-image: url({currentImageUrl})">
-  <MainText color={currentTextColor} />
+  <div class="nav-arrow nav-arrow-left" on:click={toLeftPage}>
+    <i class="fa fa-chevron-left" />
+  </div>
+  {#if currentPage === 'main'}
+    <MainText color={currentTextColor} />
+  {:else if currentPage === 'tools'}
+    <Tools />
+  {/if}
+  <div class="nav-arrow nav-arrow-right" on:click={toRightPage}>
+    <i class="fa fa-chevron-right" />
+  </div>
   <img
     src="/icons/settings.png"
     alt="Settings icon"
