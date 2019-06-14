@@ -2,6 +2,7 @@
   import MainText from "./MainText.svelte";
   import Settings from "./Settings.svelte";
   import Tools from "./Tools.svelte";
+  import PageIndicator from "./PageIndicator.svelte";
 
   const images = {
     "Landscape 1": { href: "./img/landscape1.jpg", textColor: "#333" },
@@ -105,4 +106,5 @@
       {images}
       {currentImage} />
   {/if}
+  <PageIndicator max={pages.length} current={currentPageIndex} />
 </main>
