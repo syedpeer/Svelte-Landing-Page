@@ -14,7 +14,7 @@
   $: currentTextColor = images[currentImage].textColor;
 
   const pages = ["main", "tools"];
-  let currentPageIndex = 1;
+  let currentPageIndex = 0;
   $: currentPage = pages[currentPageIndex];
 
   let settingsPage = false;
@@ -64,6 +64,7 @@
   i {
     font-size: 5em;
     font-stretch: ultra-expanded;
+    color: rgb(150, 144, 144);
   }
 
   img {
